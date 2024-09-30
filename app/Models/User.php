@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @method static create(array $attributes)
+ * @property string $role
  */
 class User extends Authenticatable
 {
@@ -47,5 +48,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function isUser(): string
+    {
+        return $this->role = 'user';
+    }
+    public function isAdmin(): string
+    {
+        return $this->role = 'admin';
     }
 }
