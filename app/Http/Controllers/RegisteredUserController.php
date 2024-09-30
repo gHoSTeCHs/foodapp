@@ -39,15 +39,14 @@ class RegisteredUserController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['required', 'max:50'],
-            'email' => ['required', 'email' . 'max:256'],
-            'phone' => ['required'],
-            'location'=>['required'],
-            'password'=>['required', 'confirmed', Password::min(7)]
+            'email' => ['required', 'email', 'max:256'],
+            'location' => ['required'],
+            'password' => ['required', 'confirmed', Password::min(7)]
         ]);
 
         $user = User::create($attributes);
 
-        event(new Registered($user));
+//        event(new Registered($user));
 
         Auth::login($user);
 

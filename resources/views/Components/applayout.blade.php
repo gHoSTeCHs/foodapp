@@ -11,6 +11,11 @@
     <title>{{$title}}</title>
 </head>
 <body class="bg-background">
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 {{$slot}}
 </body>
 </html>

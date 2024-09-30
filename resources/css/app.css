@@ -6,6 +6,7 @@
 @layer {
     :root {
         --background: #F5F5F8;
+        --text-primary: #000000;
         --text-secondary: #919191;
         --text-error: #FA4A0C;
     }

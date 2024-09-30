@@ -8,8 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('/auth')->group(function () {
-    Route::get('/register', [RegisteredUserController::class, 'index']);
-    Route::get('/login', [SessionController::class, 'index']);
-});
+Route::get('/login', [SessionController::class, 'index'])->name('login');
+Route::get('/register', [RegisteredUserController::class, 'index']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
+
 

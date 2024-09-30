@@ -1,12 +1,6 @@
-<x-authlayout>
+<x-authlayout title="Login">
     <div>
-        <div>
 
-        </div>
-
-        <div>
-
-        </div>
     </div>
 
 </x-authlayout>
