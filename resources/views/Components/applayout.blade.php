@@ -10,12 +10,14 @@
     @vite('resources/css/app.css')
     <title>{{$title}}</title>
 </head>
-<body class="bg-background">
+<body class="bg-background relative">
+<x-header/>
 @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
 @endif
 {{$slot}}
+<x-nav/>
 </body>
 </html>
